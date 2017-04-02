@@ -500,6 +500,7 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
   var topScroll = document.body.scrollTop;
   var fiveArray = [];
+  var i;
 
   //For loop that pushes the 5 values that repeat into an array 
   for (i = 0; i < 5; i++) {
