@@ -496,10 +496,18 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+  //Helped by MCS's post in Udacity forum
+  var items = document.getElementsByClassName('mover');
+  var topScroll = document.body.scrollTop;
+  var fiveArray = [];
 
-  var items = document.querySelectorAll('.mover');
+  //For loop that pushes the 5 values that repeat into an array 
+  for (i = 0; i < 5; i++) {
+    fiveArray.push(Math.sin((top/1250)+i));
+  }
+
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = fiveArray[i % 5];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
