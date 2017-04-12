@@ -417,6 +417,8 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
+  //Helped along by Cameron's solution for Stop FSL quiz
+  //changePizzaSizes now resizes the pizzas in under 1 ms 
   function changePizzaSizes(size){
     switch(size) {
       case "1":
@@ -432,6 +434,7 @@ var resizePizzas = function(size) {
         console.log("bug in changePizzasSizes");
     }
 
+    //randomPizzas contains DOM nodes and avoid unnecessary repetition
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
 
     for (var i = 0; i < randomPizzas.length; i++) {
@@ -476,24 +479,29 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   console.log("Average scripting time to generate last 10 frames: " + sum / 10 + "ms");
 }
 
+//Moved the variable items to the global scope and there was no need for it to be inside
+//the updatePositions function and it was slowing down performance.
+//Also used getElementsByClassName as that is more efficient than querySelectorAll
+var items = document.getElementsByClassName('mover');
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-var items = document.getElementsByClassName('mover');
+
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   //Helped by MCS's post in Udacity forum
-  
+  //https://discussions.udacity.com/t/project-4-how-do-i-optimize-the-background-pizzas-for-loop/36302/16
   var topScroll = document.body.scrollTop;
   var arrayX = [];
   var i;
 
-  //For loop that pushes the 5 values that repeat into an array 
+  //For loop that pushes the 5 unique, repeating values into an array called arrayX
   for (i = 0; i < 5; i++) {
     arrayX.push(Math.sin((topScroll/1250)+i));
   }
 
+  //Due to above changes, var phase does a lot less work and doesn't have to be constantly recalculated
   for (var i = 0; i < items.length; i++) {
     var phase = arrayX[i % 5];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
