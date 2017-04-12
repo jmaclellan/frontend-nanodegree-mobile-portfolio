@@ -22,7 +22,7 @@ Chrome DevTools console.
 * Used the website, Optimizilla.com, to compress the size of two jpeg images and add those newly optimized images 
 (profilepic-min.jpg and pizzeria-min.jpg) to the project.
 
-* Used Gimp, a free image editor availble online, in order to reduce the size of pizzeria-min.jpg, as the original
+* Used Gimp, a free image editor available online, in order to reduce the size of pizzeria-min.jpg, as the original
 pizzeria.jpg had a natural size much larger than the display size which caused the page to be inefficient.
 
 * Inlined CSS between style tags in the head
@@ -38,8 +38,7 @@ pizzeria.jpg had a natural size much larger than the display size which caused t
 
 #### Part 2: Optimize Frames per Second in pizza.html: Steps Taken
 
-* Followed along with Cameron's answer for the Stop FSL quiz (I was a bit confused at first as the timeline in Chrome Dev Tools
-had changed so much from the videos)
+* Followed along with Cameron's answer for the Stop FSL quiz 
 
 * Saved DOM nodes to the variable randomPizzas in order to avoid unnecessary repetition
 
@@ -66,4 +65,4 @@ effectively.
 * Towards the end of the code, in the for loop in the event listener for when the page loads, I changed the number of pizzas 
 from 200 to 32 as there was no need to generate pizzas that weren't visible on the screen
 
-* Minified main.js into main-min.js using the minifier.org
+* Minified main.js into main-min.js using minifier.org
