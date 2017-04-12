@@ -17,7 +17,7 @@ Chrome DevTools console.
 ### https://jmaclellan.github.io/frontend-nanodegree-mobile-portfolio/views/pizza-min.html
 
 
-####Steps taken to Optimize PageSpeed Insights score for index.html
+#### Steps taken to Optimize PageSpeed Insights score for index.html
 
 * Used the website, Optimizilla.com, to compress the size of two jpeg images and add those newly optimized images 
 (profilepic-min.jpg and pizzeria-min.jpg) to the project.
@@ -36,7 +36,7 @@ pizzeria.jpg had a natural size much larger than the display size which caused t
 * Also minified index.html into index-min.html using the sites minifier.org for CSS and willpeavy.com for HTML
 
 
-####Part 2: Optimize Frames per Second in pizza.html: Steps Taken
+#### Part 2: Optimize Frames per Second in pizza.html: Steps Taken
 
 * Followed along with Cameron's answer for the Stop FSL quiz (I was a bit confused at first as the timeline in Chrome Dev Tools
 had changed so much from the videos)
@@ -65,3 +65,5 @@ effectively.
 
 * Towards the end of the code, in the for loop in the event listener for when the page loads, I changed the number of pizzas 
 from 200 to 32 as there was no need to generate pizzas that weren't visible on the screen
+
+* Minified main.js into main-min.js using the minifier.org
